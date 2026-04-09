@@ -13,3 +13,10 @@
 4. 디자인 패턴 + 아키텍쳐
 5. 테스트
 ```
+
+[공부 키워드]
+
+    FastAPI
+    ASGI
+    Swagger
+    Pydantic
