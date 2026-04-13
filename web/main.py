@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from swagger.swagger import router as swagger_router
 from request.router import router as request_router
 from response.router import router as response_router
-from template.jinja import router as template_router
+from template.router import router as template_router
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 

@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Item List</title>
 </head>
 <body>
-    <h1>{{ id }}</h1>
-    <p>{{ item.name }}</p>
-    <p>{{ item.price }}</p>
+    <h1>요청 ID: {{ id }}</h1>
+    {% if q %}
+    <p>검색어: <strong>{{ q }}</strong></p>
+    {% endif %}
+    <hr>
+    
+    <h2>상품 목록 (For / If 예제)</h2>
+    <ul>
+        {% for item in items %}
+            <li>
+                <!-- a 태그를 통한 링크 연결 예시 (현재 id 유지, q 값을 name으로 전달) -->
+                <a href="/template/items/{{ id }}?q={{ item.name }}">{{ item.name }}</a> 
+                - {{ item.price }}원 
+                
+                <!-- if 문법 예시 -->
+                {% if item.is_sale %}
+                    <span style="color: red; font-weight: bold;">(할인 중!)</span>
+                {% else %}
+                    <span style="color: gray;">(정가)</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
